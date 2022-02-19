@@ -12,7 +12,34 @@ PXEチャレンジ
   - dnsmasqで実装
 - TFTP Server: 192.168.1.50
   - dnsmasqで実装
+- PXEクライアント: NUC6i5SYH (Intel NUC)
 
+## 構成
+
+```bash
+captain@ubuntu:~/develop$ tree
+.
+├── dnsmasq
+│   ├── dnsmasq.conf
+│   └── Dockerfile
+├── docker-compose.yaml
+├── Makefile
+├── pxeboot
+│   ├── autoinstall
+│   │   ├── meta-data
+│   │   └── user-data
+│   └── ubuntu-20.04.3-live-server-amd64.iso
+├── README.md
+└── tftpboot
+    ├── initrd
+    ├── ldlinux.c32
+    ├── libcom32.c32
+    ├── libutil.c32
+    ├── pxelinux.0
+    ├── pxelinux.cfg
+    │   └── default
+    └── vmlinuz
+```
 
 ## 作業ログ
 ```bash
@@ -74,3 +101,9 @@ dhcp_1   | dnsmasq-dhcp: 12207496 sent size: 17 option: 97 client-machine-id  00
 dhcp_1   | dnsmasq-dhcp: 12207496 sent size: 10 option: 43 vendor-encap  06:01:08:...
 # Client側で"PXE-E21 : Remote boot canceled"のエラーが発生、Boot終了
 ```
+
+## 参考にしている資料
+- [OS自動インストールを行うためのPXEブート環境を作る - Qiita](https://qiita.com/sakai00kou/items/bc6ae4d6b4cacc4b8af9)
+- [Ubuntu Server 20.04の自動インストール機能でネットワークインストールする。 - Qiita](https://qiita.com/sakai00kou/items/7ce4a8a410251b98b2ac)
+- [DNSMASQ](https://thekelleys.org.uk/dnsmasq/docs/dnsmasq-man.html)
+- [Netbooting the server installer on amd64 - Ubuntu](https://ubuntu.com/server/docs/install/netboot-amd64)
