@@ -1,0 +1,16 @@
+version: '3'
+services:
+  dhcp:
+    restart: always
+    image: ryusa/dnsmasq:0.1
+    volumes:
+      - ${PWD}/dnsmasq/dnsmasq.conf:/etc/dnsmasq.conf
+      - ${PWD}/tftpboot:/tftpboot
+    network_mode: "host"
+  nginx:
+    restart: always
+    image: nginx
+    volumes:
+      - ${PWD}/pxeboot:/usr/share/nginx/html/pxeboot
+    ports:
+      - "80:80"

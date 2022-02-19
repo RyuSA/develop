@@ -1,0 +1,16 @@
+autoinstall:
+  version: 1
+  locale: ja_JP.UTF-8
+  keyboard:
+    layout: "jp"
+  storage:
+    layout:
+      name: lvm
+  identity:
+    hostname: ubuntu-server
+    username: ubuntu
+    password: "$6$nFV7aBiOVRpPF8Qq$l0KnHQehyWsyGRzXvQnnriXxSUbrhPrWtkhOm4lZh1wSdzz4Ga9QN3eBcf9POKo8YFF0pztU9oIwx8oyNrNsf."
+  ssh:
+    install-server: yes
+  user-data:
+    timezone: Asia/Tokyo

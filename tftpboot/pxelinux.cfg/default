@@ -1,0 +1,5 @@
+default autoinstall
+label autoinstall
+  kernel vmlinuz
+  initrd initrd
+  append autoinstall ip=dhcp url=http://192.168.1.50/pxeboot/ubuntu-20.04.3-live-server-amd64.iso ds=nocloud-net;s=http://192.168.1.50/pxeboot/autoinstall/

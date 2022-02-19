@@ -1,0 +1,6 @@
+vmlinuz
+initrd
+pxelinux.0
+ldlinux.c32
+libcom32.c32
+libutil.c32
